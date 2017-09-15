@@ -4,7 +4,12 @@ var program = require('commander');
 
 var lib = require('./my_lib');
 
-program.version('1.0.0')
+function parse10(val) {
+    // radix 10
+    return parseInt(val, 10);
+}
+
+program.version('1.0.2')
 
 program.command('uuid')
     .description('Generate uuid string')
@@ -14,7 +19,7 @@ program.command('uuid')
 	
 program.command('hex')
     .description('Generate hex random string')
-    .option('-b, --bytes <n>', 'The number of bytes of hex', parseInt, 16)
+    .option('-b, --bytes <value>', 'The number of bytes of hex', parse10, 16)
     .action(function(options) {
     	var bytes = options.bytes;
     	lib.string_hex(bytes);
@@ -22,7 +27,7 @@ program.command('hex')
 
 program.command('hex_array')
     .description('Generate hex array. Ex: { 0x01, 0xab, 0x3a }')
-    .option('-b, --bytes <n>', 'The number of bytes', parseInt, 16)
+    .option('-b, --bytes <value>', 'The number of bytes', parse10, 16)
     .action(function(options) {
     	var bytes = options.bytes;
     	lib.string_hex_array(bytes);
@@ -30,7 +35,7 @@ program.command('hex_array')
 
 program.command('string')
     .description('Generate secure random string.')
-    .option('-l, --length <n>', 'The length of string', parseInt, 16)
+    .option('-l, --length <value>', 'The length of string', parse10, 16)
     .action(function(options) {
     	var length = options.length;
     	lib.string_secure_random(length);

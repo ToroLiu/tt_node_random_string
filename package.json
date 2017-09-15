@@ -1,15 +1,21 @@
 {
-  "name": "node_random_string",
-  "version": "1.0.0",
-  "description": "Generate random string, uuid, or hex array.",
+  "name": "node_random_string_cli",
+  "version": "1.0.2",
+  "description": "nodejs command line tool for generating random string.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "random",
-    "string"
+    "string",
+    "random_string",
+    "random_string_cli"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToroLiu/tt_node_random_string"
+  },
   "author": "ToroLiu",
   "license": "MIT",
   "bin": {

@@ -3,7 +3,7 @@
 	const uuid = require('uuid/v4');
 	module.exports.string_uuid = function() {
 		var str = uuid();
-		var result = str.replace('-', '');
+		var result = str.replace(/\-/g, '');
 		console.log(result);
 	}
 
