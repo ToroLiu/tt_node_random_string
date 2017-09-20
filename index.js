@@ -9,7 +9,7 @@ function parse10(val) {
     return parseInt(val, 10);
 }
 
-program.version('1.0.2')
+program.version('1.0.3')
 
 program.command('uuid')
     .description('Generate uuid string')
